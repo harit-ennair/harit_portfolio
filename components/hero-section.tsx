@@ -18,11 +18,9 @@ import {
 import {
   duration,
   ease,
-  staggerContainer,
-  staggerFadeUp,
-  viewport,
   isTouchDevice,
 } from "@/lib/animations";
+import { HeroRadarRings } from "@/components/hero-radar-rings";
 
 /* ── Headline lines for staggered reveal ──────────────────────── */
 const headlineLines: { text: string; shifted: boolean }[] = [
@@ -134,41 +132,44 @@ function AccentEnhanced({
   const offsetY = useTransform(mouseY, (v) => (disabled ? 0 : v * 0.02));
 
   return (
-    <motion.div
-      className="hero-accent"
-      aria-hidden="true"
-      style={{ x: offsetX, y: offsetY }}
-      initial={false}
-      animate={
-        reduceMotion
-          ? undefined
-          : { opacity: [0.8, 1], scale: [0.97, 1], rotate: [-2, 0] }
-      }
-      transition={{ duration: 0.75, delay: 0.15, ease: ease.out }}
-    >
-      <span className="accent-orbit" />
-      <motion.span
-        className="accent-cross"
-        animate={reduceMotion ? undefined : { rotate: 360 }}
-        transition={
+    <div style={{ position: "relative" }}>
+      <HeroRadarRings />
+      <motion.div
+        className="hero-accent"
+        aria-hidden="true"
+        style={{ x: offsetX, y: offsetY }}
+        initial={false}
+        animate={
           reduceMotion
             ? undefined
-            : {
-              duration: 20,
-              repeat: Infinity,
-              ease: "linear",
-            }
+            : { opacity: [0.8, 1], scale: [0.97, 1], rotate: [-2, 0] }
         }
-        style={{ display: "inline-block" }}
+        transition={{ duration: 0.75, delay: 0.15, ease: ease.out }}
       >
-        ✳
-      </motion.span>
-      <span className="accent-caption">
-        FROM IDEA
-        <br />
-        TO INTERFACE
-      </span>
-    </motion.div>
+        <span className="accent-orbit" />
+        <motion.span
+          className="accent-cross"
+          animate={reduceMotion ? undefined : { rotate: 360 }}
+          transition={
+            reduceMotion
+              ? undefined
+              : {
+                duration: 20,
+                repeat: Infinity,
+                ease: "linear",
+              }
+          }
+          style={{ display: "inline-block" }}
+        >
+          ✳
+        </motion.span>
+        <span className="accent-caption">
+          FROM IDEA
+          <br />
+          TO INTERFACE
+        </span>
+      </motion.div>
+    </div>
   );
 }
 
@@ -230,6 +231,7 @@ export function HeroSection() {
       className="hero wrap"
       ref={sectionRef}
       onMouseMove={handleMouseMove}
+      style={{ overflow: "clip" }}
     >
       {/* Subtle animated grid background */}
       <div className="hero-grid" aria-hidden="true" />
