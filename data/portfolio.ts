@@ -44,7 +44,7 @@ export const projects = [
     url: "https://github.com/harit-ennair/Aptiv_Quiz_Application", visual: "quiz",
   },
   {
-    name: "Inspire-Environment", type: "Backend engineering", description: "A Spring Boot application for managing students, staff, activities, and attendance.",
+    name: "Inspire Environment", type: "Backend engineering", description: "A Spring Boot application for managing students, staff, activities, and attendance.",
     details: "Includes authentication and role management, with a Java backend and MySQL database.",
     tags: ["Java 17", "Spring Boot", "Spring Security", "Spring Data JPA", "MySQL", "JWT", "Docker"],
     url: "https://github.com/harit-ennair/Inspire-Environment", visual: "inspire",
