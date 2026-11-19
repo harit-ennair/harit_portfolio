@@ -1,8 +1,10 @@
+import { getAssetPath } from "@/lib/assets";
+
 export type EducationPhoto = { src: string; alt: string };
 
 const photos = (folder: string, descriptions: string[]): EducationPhoto[] =>
   descriptions.map((alt, index) => ({
-    src: `/education/${folder}/${String(index + 1).padStart(2, "0")}.webp`,
+    src: getAssetPath(`/education/${folder}/${String(index + 1).padStart(2, "0")}.webp`),
     alt,
   }));
 
