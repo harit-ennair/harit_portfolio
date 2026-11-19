@@ -1,4 +1,4 @@
-﻿export const profile = {
+export const profile = {
   name: "Harit Ennair",
   role: "Full-Stack Web Developer",
   location: "Casablanca, Morocco",
@@ -9,8 +9,8 @@
 
 export const navigation = [
   { label: "About", href: "#about" },
-  { label: "Experience", href: "#experience" },
   { label: "Projects", href: "#projects" },
+  { label: "Experience", href: "#experience" },
   { label: "Skills", href: "#skills" },
   { label: "Contact", href: "#contact" },
 ];
