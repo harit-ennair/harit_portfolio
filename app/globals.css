@@ -37,3 +37,27 @@
 .education-lightbox-footer p span{display:block;color:var(--muted)}
 .education-lightbox-controls{display:flex;gap:.5rem}
 @media(max-width:500px){.education-lightbox{width:calc(100% - 1rem);max-height:calc(100dvh - 1rem)}.education-lightbox-content{padding:.75rem}.education-lightbox-image{height:55dvh}.education-lightbox-footer{align-items:flex-start}}
+
+/* Editorial illustrations for selected work */
+.project-artwork{display:flex;flex-direction:column;justify-content:space-between;padding:clamp(1.25rem,2.4vw,2rem);isolation:isolate}
+.artwork-supply:before,.artwork-quiz:before,.artwork-inspire:before{content:none}
+.art-topline,.art-bottomline{display:flex;justify-content:space-between;align-items:center;gap:1rem;font-size:.75rem;font-weight:650;line-height:1.4}
+.art-topline span:last-child,.art-bottomline span:last-child{text-align:right;color:#66636c}
+.art-bottomline{padding-top:.85rem;border-top:1px solid #cccbd2}
+.supply-art{display:grid;grid-template-columns:1fr auto;align-items:end;gap:1rem;margin:1.5rem 0}
+.supply-mark{font-size:clamp(4.5rem,8vw,8rem);line-height:.75;letter-spacing:-.11em;font-weight:850;color:#202026}
+.supply-mark span{color:#7645e7}
+.supply-flow{display:flex;flex-direction:column;align-items:flex-start;gap:.7rem;padding-left:1rem;border-left:2px solid #8a5ce0;font-size:.75rem;font-weight:650;line-height:1.25}
+.artwork-quiz{background:#eeedf1}
+.quiz-art{display:flex;align-items:center;justify-content:center;gap:clamp(1.25rem,3vw,3rem);margin:1.5rem 0}
+.quiz-symbol{display:grid;place-items:center;flex:0 0 auto;width:clamp(6.5rem,11vw,10rem);aspect-ratio:1;border-radius:50%;background:var(--gradient);color:white;font-size:clamp(5rem,8vw,7rem);font-weight:750;line-height:1}
+.quiz-words,.inspire-words{display:flex;flex-direction:column;align-items:flex-start;gap:.7rem;font-size:clamp(.875rem,1.1vw,1.1rem);font-weight:700;letter-spacing:-.025em}
+.quiz-words span+span{color:#66636c}
+.artwork-inspire{background:#fff}
+.inspire-art{display:flex;align-items:center;justify-content:center;gap:clamp(1.25rem,3vw,3rem);margin:1.5rem 0}
+.inspire-emblem{position:relative;display:grid;place-items:center;flex:0 0 auto;width:clamp(7rem,12vw,11rem);aspect-ratio:1;border:1px solid #9e9aa8;border-radius:50%}
+.inspire-emblem:before,.inspire-emblem:after{content:"";position:absolute;inset:12%;border:1px solid #bcb8c4;border-radius:50%}
+.inspire-emblem:after{inset:24%;border:0;background:var(--gradient)}
+.inspire-emblem span{z-index:1;color:white;font-size:1.25rem;font-weight:800;letter-spacing:-.08em}
+.inspire-words span{padding-bottom:.35rem;border-bottom:1px solid #cfcdd3}
+@media(max-width:500px){.project-artwork{padding:1.25rem}.supply-mark{font-size:clamp(4.5rem,20vw,6rem)}.quiz-symbol{width:7rem;font-size:5rem}.inspire-emblem{width:7.5rem}}

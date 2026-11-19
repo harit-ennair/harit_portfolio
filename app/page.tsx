@@ -6,10 +6,20 @@ import { educationPhotos } from "@/data/education-photos";
 import { education, experience, navigation, profile, projects, skillGroups } from "@/data/portfolio";
 
 function ProjectArtwork({ visual }: { visual: string }) {
-  return <div className={`project-artwork artwork-${visual}`} aria-label="Abstract project illustration">
-    <span className="artwork-label">Conceptual visual</span>
-    {visual !== "quiz" ? <div className="supply-diagram" aria-hidden="true"><span /><span /><span /><i /><i /></div> : <div className="quiz-diagram" aria-hidden="true"><span /><span /><span /><span /></div>}
-    <span className="artwork-caption">{visual === "supply" ? "Procurement / Production / Distribution" : visual === "inspire" ? "Students / Activities / Attendance" : "Assessments / Quizzes / Results"}</span>
+  return <div className={`project-artwork artwork-${visual}`} aria-hidden="true">
+    {visual === "supply" ? <>
+      <div className="art-topline"><span>SupplyChainX</span><span>Project illustration</span></div>
+      <div className="supply-art"><span className="supply-mark">SC<span>X</span></span><div className="supply-flow"><span>Procurement</span><span>Production</span><span>Distribution</span></div></div>
+      <div className="art-bottomline"><span>Supply chain</span><span>Java / Spring Boot</span></div>
+    </> : visual === "quiz" ? <>
+      <div className="art-topline"><span>Aptiv Quiz Application</span><span>Project illustration</span></div>
+      <div className="quiz-art"><div className="quiz-symbol">?</div><div className="quiz-words"><span>Assessments</span><span>Quizzes</span><span>Results</span></div></div>
+      <div className="art-bottomline"><span>Technical assessments</span><span>Laravel / PHP</span></div>
+    </> : <>
+      <div className="art-topline"><span>Inspire Environment</span><span>Project illustration</span></div>
+      <div className="inspire-art"><div className="inspire-emblem"><span>IE</span></div><div className="inspire-words"><span>Students</span><span>Activities</span><span>Attendance</span></div></div>
+      <div className="art-bottomline"><span>Education management</span><span>Java / Spring Boot</span></div>
+    </>}
   </div>;
 }
 
