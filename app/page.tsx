@@ -4,10 +4,10 @@ import { Accent, Reveal } from "@/components/reveal";
 import { education, experience, navigation, profile, projects, skillGroups } from "@/data/portfolio";
 
 function ProjectArtwork({ visual }: { visual: string }) {
-  return <div className={`project-artwork ${visual === "supply" ? "artwork-supply" : "artwork-quiz"}`} aria-label="Abstract project illustration">
+  return <div className={`project-artwork artwork-${visual}`} aria-label="Abstract project illustration">
     <span className="artwork-label">Conceptual visual</span>
-    {visual === "supply" ? <div className="supply-diagram" aria-hidden="true"><span /><span /><span /><i /><i /></div> : <div className="quiz-diagram" aria-hidden="true"><span /><span /><span /><span /></div>}
-    <span className="artwork-caption">{visual === "supply" ? "Procurement / Production / Distribution" : "Assessments / Quizzes / Results"}</span>
+    {visual !== "quiz" ? <div className="supply-diagram" aria-hidden="true"><span /><span /><span /><i /><i /></div> : <div className="quiz-diagram" aria-hidden="true"><span /><span /><span /><span /></div>}
+    <span className="artwork-caption">{visual === "supply" ? "Procurement / Production / Distribution" : visual === "inspire" ? "Students / Activities / Attendance" : "Assessments / Quizzes / Results"}</span>
   </div>;
 }
 
