@@ -15,7 +15,7 @@ export function AnimatedTimeline({ children, className = "" }: Props) {
 
   const { scrollYProgress } = useScroll({
     target: containerRef,
-    offset: ["start 0.85", "end 0.5"],
+    offset: ["start 65%", "end 65%"],
   });
 
   const scaleY = useTransform(scrollYProgress, [0, 1], [0, 1]);
@@ -33,36 +33,33 @@ export function AnimatedTimeline({ children, className = "" }: Props) {
       {/* Background track line */}
       <div
         aria-hidden="true"
+        className="timeline-track"
         style={{
           position: "absolute",
           left: 0,
           top: "1.5rem",
           bottom: "1.5rem",
           width: 2,
-          background: "#dedee2",
           borderRadius: 1,
         }}
       />
 
       {/* Decorative progressive timeline fill */}
-      {!reduceMotion && (
-        <motion.div
-          aria-hidden="true"
-          style={{
-            position: "absolute",
-            left: 0,
-            top: "1.5rem",
-            bottom: "1.5rem",
-            width: 2,
-            transformOrigin: "top",
-            scaleY,
-            background:
-              "linear-gradient(180deg, #2563eb 0%, #a855f7 50%, #ef4444 100%)",
-            borderRadius: 1,
-            zIndex: 1,
-          }}
-        />
-      )}
+      <motion.div
+        aria-hidden="true"
+        className="timeline-progress"
+        style={{
+          position: "absolute",
+          left: 0,
+          top: "1.5rem",
+          bottom: "1.5rem",
+          width: 2,
+          transformOrigin: "top",
+          scaleY: reduceMotion ? 1 : scaleY,
+          borderRadius: 1,
+          zIndex: 1,
+        }}
+      />
 
       {children}
     </motion.div>

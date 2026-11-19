@@ -4,6 +4,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { motion, useReducedMotion, AnimatePresence, LayoutGroup } from "motion/react";
 import { Mail } from "lucide-react";
 import { MobileMenu } from "@/components/mobile-menu";
+import { ThemeToggle } from "@/components/theme-toggle";
 import { navigation, profile } from "@/data/portfolio";
 
 export function Navbar() {
@@ -84,6 +85,8 @@ export function Navbar() {
             ))}
           </nav>
         </LayoutGroup>
+
+        <ThemeToggle />
 
         <a className="nav-contact" href={`mailto:${profile.email}`}>
           Let&apos;s talk <Mail size={16} aria-hidden="true" />
