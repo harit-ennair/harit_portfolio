@@ -5,7 +5,7 @@ import { motion, useReducedMotion } from "motion/react";
 /**
  * Concentric orbital / radar rings with satellite node dots,
  * perfectly matching the design mockup behind the hero accent card.
- * Smooth, elegant ambient orbital rotation with pulsing satellite nodes.
+ * Rich constellation of pulsing satellite nodes with smooth ambient rotation.
  */
 export function HeroRadarRings() {
   const reduceMotion = useReducedMotion();
@@ -26,34 +26,66 @@ export function HeroRadarRings() {
     { r: 1200, dashed: true, strokeDasharray: "7 9", opacity: 0.15 },
   ];
 
-  // Satellite node dots distributed thoughtfully across orbits
+  // Satellite node dots distributed generously across all orbits
   const dots = [
+    // Ring 1 (r: 140, solid)
+    { r: 140, angle: 130, size: 3.2 },
+    { r: 140, angle: 310, size: 3.0 },
+
     // Ring 2 (r: 230, dashed)
-    { r: 230, angle: 195, size: 3.5 },
-    { r: 230, angle: 35, size: 3 },
+    { r: 230, angle: 25, size: 3.2 },
+    { r: 230, angle: 110, size: 3.5 },
+    { r: 230, angle: 195, size: 3.6 },
+    { r: 230, angle: 290, size: 3.0 },
 
     // Ring 3 (r: 340, solid)
-    { r: 340, angle: 155, size: 4 },
-    { r: 340, angle: 310, size: 3.5 },
+    { r: 340, angle: 40, size: 3.5 },
+    { r: 340, angle: 100, size: 3.8 },
+    { r: 340, angle: 155, size: 4.2 },
+    { r: 340, angle: 220, size: 3.6 },
+    { r: 340, angle: 315, size: 3.8 },
 
-    // Ring 4 (r: 470, dashed) - Iconic nodes
+    // Ring 4 (r: 470, dashed)
+    { r: 470, angle: 15, size: 3.8 },
+    { r: 470, angle: 75, size: 3.5 },
+    { r: 470, angle: 115, size: 4.4 },
+    { r: 470, angle: 170, size: 4.0 },
     { r: 470, angle: 215, size: 4.8 },
-    { r: 470, angle: 115, size: 4.2 },
-    { r: 470, angle: 285, size: 3.8 },
+    { r: 470, angle: 285, size: 4.0 },
 
     // Ring 5 (r: 620, solid)
-    { r: 620, angle: 45, size: 4.5 },
-    { r: 620, angle: 180, size: 4 },
-    { r: 620, angle: 250, size: 3.5 },
+    { r: 620, angle: 30, size: 4.0 },
+    { r: 620, angle: 85, size: 3.6 },
+    { r: 620, angle: 140, size: 4.2 },
+    { r: 620, angle: 180, size: 4.5 },
+    { r: 620, angle: 230, size: 3.8 },
+    { r: 620, angle: 275, size: 3.6 },
+    { r: 620, angle: 330, size: 4.4 },
 
     // Ring 6 (r: 790, dashed)
-    { r: 790, angle: 135, size: 4.2 },
-    { r: 790, angle: 225, size: 3.8 },
+    { r: 790, angle: 20, size: 3.6 },
+    { r: 790, angle: 65, size: 4.0 },
+    { r: 790, angle: 105, size: 3.8 },
+    { r: 790, angle: 150, size: 4.4 },
+    { r: 790, angle: 210, size: 4.2 },
+    { r: 790, angle: 260, size: 3.6 },
+    { r: 790, angle: 320, size: 4.0 },
     { r: 790, angle: 355, size: 3.5 },
 
     // Ring 7 (r: 980, solid)
-    { r: 980, angle: 165, size: 4.5 },
-    { r: 980, angle: 85, size: 3.5 },
+    { r: 980, angle: 45, size: 4.2 },
+    { r: 980, angle: 90, size: 3.6 },
+    { r: 980, angle: 145, size: 4.0 },
+    { r: 980, angle: 190, size: 4.5 },
+    { r: 980, angle: 245, size: 3.8 },
+    { r: 980, angle: 305, size: 4.2 },
+
+    // Ring 8 (r: 1200, dashed)
+    { r: 1200, angle: 35, size: 3.6 },
+    { r: 1200, angle: 110, size: 4.0 },
+    { r: 1200, angle: 175, size: 4.2 },
+    { r: 1200, angle: 235, size: 3.8 },
+    { r: 1200, angle: 295, size: 3.6 },
   ];
 
   return (
@@ -96,7 +128,7 @@ export function HeroRadarRings() {
           }
           .hero-orbit-dot-glow {
             fill: #7c3aed;
-            opacity: 0.26;
+            opacity: 0.28;
             transition: fill 0.3s ease;
           }
 
@@ -111,7 +143,7 @@ export function HeroRadarRings() {
           }
           :is(.dark, [data-theme="dark"]) .hero-orbit-dot-glow {
             fill: #c084fc;
-            opacity: 0.35;
+            opacity: 0.38;
           }
         `}</style>
 
@@ -122,17 +154,17 @@ export function HeroRadarRings() {
             reduceMotion
               ? undefined
               : {
-                rotate: 360,
-              }
+                  rotate: 360,
+                }
           }
           transition={
             reduceMotion
               ? undefined
               : {
-                duration: 90,
-                repeat: Infinity,
-                ease: "linear",
-              }
+                  duration: 90,
+                  repeat: Infinity,
+                  ease: "linear",
+                }
           }
         >
           {/* Concentric rings */}
@@ -167,19 +199,19 @@ export function HeroRadarRings() {
                     reduceMotion
                       ? undefined
                       : {
-                        r: [dot.size * 1.8, dot.size * 2.6, dot.size * 1.8],
-                        opacity: [0.2, 0.45, 0.2],
-                      }
+                          r: [dot.size * 1.8, dot.size * 2.6, dot.size * 1.8],
+                          opacity: [0.2, 0.48, 0.2],
+                        }
                   }
                   transition={
                     reduceMotion
                       ? undefined
                       : {
-                        duration: 2.8,
-                        repeat: Infinity,
-                        ease: "easeInOut",
-                        delay: (i % 5) * 0.55,
-                      }
+                          duration: 2.6,
+                          repeat: Infinity,
+                          ease: "easeInOut",
+                          delay: (i % 7) * 0.38,
+                        }
                   }
                 />
                 {/* Main crisp node */}
