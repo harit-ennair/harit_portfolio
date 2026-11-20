@@ -6,7 +6,11 @@
   --line: #bdbdc2;
   --paper: #fafafa;
   --surface: #f0f0f1;
-  --gradient: linear-gradient(135deg, #2563eb 0%, #a855f7 50%, #ef4444 100%)
+  --gradient: linear-gradient(135deg, #2563eb 0%, #a855f7 50%, #ef4444 100%);
+  --orbit-ring-solid: rgba(124, 58, 237, 0.28);
+  --orbit-ring-dashed: rgba(124, 58, 237, 0.42);
+  --orbit-dot: #7c3aed;
+  --orbit-glow: rgba(124, 58, 237, 0.22);
 }
 
 [data-theme="dark"],
@@ -17,6 +21,10 @@
   --paper: #0b0b0e;
   --surface: #131317;
   --gradient: linear-gradient(135deg, #3b82f6 0%, #a855f7 50%, #f43f5e 100%);
+  --orbit-ring-solid: rgba(167, 139, 250, 0.38);
+  --orbit-ring-dashed: rgba(192, 132, 252, 0.55);
+  --orbit-dot: #c084fc;
+  --orbit-glow: rgba(192, 132, 252, 0.38);
 }
 
 * {
@@ -1627,7 +1635,7 @@ button {
 }
 
 .dark .hero-grid {
-  background-image: 
+  background-image:
     linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
     linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
 }
